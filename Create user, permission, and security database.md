@@ -2,4 +2,4 @@ pada sesi kali ini, saya akan membuat user dengan role operasional **user_read**
 
 
 
-1. sebelum membuat user, 
+1. sebelum membuat user, memastikan database atau schema public dalam keadaan zero trust dengan menghapus semua izin kepada object tersebut. karena secara default, setiap database yang dibuat tersimpan didalam schema public dan user yang dibuat tersimpan didalam role publc yang bisa membuat object pada public schema.  
