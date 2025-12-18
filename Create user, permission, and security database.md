@@ -58,6 +58,19 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 8. di tahap level lanjutan, mengaktifkan enkripsi ssl dan pgaudit menjadi skema yang kokoh untuk keamanan level tinggi.
 
 
+9. cek user beserta role operasional yang sedang digunakan
+
+   <img width="1124" height="234" alt="Screenshot (413)" src="https://github.com/user-attachments/assets/be2c9c41-9a3e-4381-adbd-27d43895ecd1" />
+
+
+10. cek grant atau akses yang diberikan kepada role operasional
+
+    <img width="1031" height="683" alt="Screenshot (414)" src="https://github.com/user-attachments/assets/1e41ba07-9ae5-40d3-8820-098f46d82174" />
+
+
+   
+
+
 
 
    
