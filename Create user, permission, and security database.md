@@ -4,8 +4,6 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 - akses role ke dalam object baru secara otomatis
 - membuat user dengan hak akses role operasional
 - mempertimbangkan membuat schema selain public
-- mengaktifkan security level ssl
-- mengaktifkan audit menggunakan pgaudit.log
 
 
 1. membuat user sebagai bahan testing untuk login ke dalam database server dengan hak akses public
@@ -23,7 +21,7 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 
 3. membuat database, schema, dan tabel sebagai bahan testing untuk role operasional
 
-   <img width="1458" height="747" alt="Screenshot (403)" src="https://github.com/user-attachments/assets/7e3e355c-dbd1-438e-bf29-4ce7abb3f56b" />
+   <img width="1263" height="608" alt="Screenshot (409)" src="https://github.com/user-attachments/assets/c0f65897-eb08-4dae-b6fd-bae91b30ff19" />
    - revoke all on database : penguncian tahap ke-1 sebagai pintu utama
    - revoke all on schema : penguncian tahap ke-2 sebelum menuju ruangan data
    - revoke all on table : penguncian tahap ke-3 sebelum mengakses data
@@ -31,7 +29,7 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 
 4. membuat role operasional **user_reader** secara ketat
    
-   <img width="1147" height="323" alt="Screenshot (404)" src="https://github.com/user-attachments/assets/0f90adce-327e-47cf-be2b-8ff482a58a0e" />
+   <img width="1327" height="325" alt="Screenshot (410)" src="https://github.com/user-attachments/assets/66887b67-e8ca-4df0-b9cf-2ce906c359ae" />
    - grant connect on database : mengizinkan role/user untuk bisa masuk menuju pintu utama
    - grant usage on schema : mengizinkan role/user untuk bisa masuk ke ruangan data
    - grant select on table : mengizinkan role/user untuk bisa mengakses data
@@ -40,7 +38,7 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 
 5. membuat user dan memberikan hak akses role **user_reader**
 
-   <img width="1209" height="315" alt="Screenshot (406)" src="https://github.com/user-attachments/assets/32d2aabd-ed1c-408e-8855-007aca1190c2" />
+   <img width="1328" height="357" alt="Screenshot (411)" src="https://github.com/user-attachments/assets/e711bfc2-a2ff-4bd9-9aeb-3338c172673d" />
 
 
 6. mendaftarkan schema yang baru ke dalam source_path, bertujuan untuk:
@@ -48,31 +46,20 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 
      <img width="846" height="270" alt="Screenshot (407)" src="https://github.com/user-attachments/assets/1487c8d0-a307-428c-bdd5-366a930155df" />
 
-     ![Uploading Screenshot (408).png…]()
+     <img width="850" height="211" alt="Screenshot (408)" src="https://github.com/user-attachments/assets/b11e9906-43ef-4793-8afb-6b47fd389ed2" />
+
+
+7. testing user untuk bisa login ke dalam database dan mengakses schema hingga mengakses data.
+
+   <img width="1033" height="302" alt="Screenshot (412)" src="https://github.com/user-attachments/assets/239c419e-f361-4225-95b0-eb1262a68c74" />
+   - dengan adanya user operasional, tidak perlu lagi menggunakan user root untuk operasional database server, terkecuali untuk kepentingan administrator.
+
+
+8. di tahap level lanjutan, mengaktifkan enkripsi ssl dan pgaudit menjadi skema yang kokoh untuk keamanan level tinggi.
 
 
 
 
-6. testing user untuk bisa login ke dalam database dan mengakses schema hingga mengakses data.
-   
-
-   
-
-   
-   
-
-   
-
-
-8.
-9.
-10. sebelum membuat user, memastikan setiap database dalam keadaan zero trust dengan menghapus semua izin kepada object tersebut. karena secara default, setiap database yang dibuat atau tersedia bisa diakses oleh user baru yang bisa membuat object lain pada database.
-   <img width="1160" height="209" alt="Screenshot (396)" src="https://github.com/user-attachments/assets/563a6527-e08c-4388-8632-2e74da9b64d6" />
-   dengan cara ini, setiap role yang mengakses database atau schema membutuhkan izin connect (grant connect)
-   memperketat keamanan database server dengan memberikan hak akses kepada role seminimal mungkin (least privilege)
-
-
-11. membuat database dan user sebagai bahan testing
    
    
    
