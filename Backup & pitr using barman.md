@@ -6,7 +6,7 @@ kelebihan barman dibandingkan pg_basebackup(native) postgresql:
 - hot physical backup
 - support incremental backup
 - support remote backup menggunakan rsync/ssh
-- cocok untuk point in time recovery
+- cocok untuk point in time recovery yang lebih fleksibel
 - satu server barman bisa mengelola lebih dari satu server postgresql, best practice
 - mengambil data via(pg_basebackup) dan menerima log via(wal archiving) terus menerus.
 - support compression wal file dan backup
