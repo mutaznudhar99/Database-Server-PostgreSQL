@@ -1,4 +1,4 @@
-<img width="1265" height="539" alt="Screenshot (416)" src="https://github.com/user-attachments/assets/76f7bd83-102c-4e8a-9fed-dfd56b361fb4" />pada sesi kali ini, saya akan melakukan physical backup yang menyimpan file data direktori postgresql server menggunakan backup and recovery manager (barman).
+pada sesi kali ini, saya akan melakukan physical backup yang menyimpan file data direktori postgresql server menggunakan backup and recovery manager (barman).
 
 barman merupakan tools open source administrator yang dikembangkan oleh enterpriseDB untuk disaster recovery postgresql server.
 
