@@ -1,8 +1,6 @@
-pada sesi kali ini, saya akan melakukan physical backup yang menyimpan file data direktori postgresql server menggunakan backup and recovery manager (barman).
+pada sesi kali ini, saya akan melakukan instalasi dan konfigurasi backup and recovery manager (barman) untuk mengelola pernyimpanan data file pada setiap server postgresql di server yang berbeda.
 
-barman merupakan tools open source administrator yang dikembangkan oleh enterpriseDB untuk disaster recovery postgresql server.
-
-kelebihan barman dibandingkan pg_basebackup(native) postgresql:
+kelebihan barman untuk penyimpanan data file postgresql:
 - hot physical backup
 - support incremental backup
 - support remote backup menggunakan rsync/ssh
@@ -12,9 +10,6 @@ kelebihan barman dibandingkan pg_basebackup(native) postgresql:
 - support compression wal file dan backup
 - support retention policy, untuk menghapus backup lama secara otomatis
 - support restore ke server postgresql berbeda versi minor (16.2 > 16.5)
-
-
-
 
 
 
