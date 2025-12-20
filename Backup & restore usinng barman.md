@@ -1,19 +1,21 @@
-pada sesi kali ini, saya akan melakukan instalasi dan konfigurasi backup and recovery manager (barman) untuk mengelola pernyimpanan data file pada setiap server postgresql di server yang berbeda.
+pada sesi kali ini, saya akan melakukan backup dan restore menggunakan tools backup and recovery manager (barman) sebagai alat pengelola penyimpanan data files dan wal files server postgresql.
 
 kelebihan barman untuk penyimpanan data file postgresql:
-- hot physical backup
+- mengambil hot full backup dan archive wal files
 - support incremental backup
-- support remote backup menggunakan rsync/ssh
+- support remote backup menggunakan rsync/ssh, untuk bisa mengelola penyimpanan data files lebih dari satu server postgresql (best practice)
 - cocok untuk point in time recovery yang lebih fleksibel
-- satu server barman bisa mengelola lebih dari satu server postgresql, best practice
-- mengambil data via(pg_basebackup) dan menerima log via(wal archiving) terus menerus.
 - support compression wal file dan backup
 - support retention policy, untuk menghapus backup lama secara otomatis
 - support restore ke server postgresql berbeda versi minor (16.2 > 16.5)
 
+hal yang dipersiapkan melakukan backup dan restore menggunakan barman:
+- 1 server barman
+- 1 server postgresql
 
 
-1. mencari paket software barman di os linux
+
+1. memastikan instalasi barman sudah dilakukan di server individu barman
 
    <img width="1201" height="105" alt="Screenshot (415)" src="https://github.com/user-attachments/assets/9ad280b2-18ec-4c07-9b78-d61efff46227" />
 
