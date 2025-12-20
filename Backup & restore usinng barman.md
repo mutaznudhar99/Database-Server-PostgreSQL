@@ -1,4 +1,4 @@
-pada sesi kali ini, saya akan melakukan backup dan restore menggunakan tools backup and recovery manager (barman) sebagai alat pengelola penyimpanan data files dan wal files server postgresql.
+pada sesi kali ini, saya akan melakukan instalasi dan konfigurasi server backup and recover manager (barman) dan server database postgresql, kemudian melakukan backup dan restore menggunakan tools barman sebagai alat pengelola penyimpanan data files dan wal files server postgresql.
 
 kelebihan barman untuk penyimpanan data file postgresql:
 - mengambil hot full backup dan archive wal files
@@ -17,32 +17,41 @@ hal yang dipersiapkan melakukan backup dan restore menggunakan barman:
 
 1. memastikan instalasi barman sudah dilakukan di server individu barman
 
-   <img width="1201" height="105" alt="Screenshot (415)" src="https://github.com/user-attachments/assets/9ad280b2-18ec-4c07-9b78-d61efff46227" />
+   <img width="1124" height="112" alt="Screenshot (425)" src="https://github.com/user-attachments/assets/17210318-c424-4e82-8c79-18f53c29f26f" />
 
 
-2. cek informasi detail mengenai software barman untuk melihat semua informasi mengenai versi barman yang tersedia di os linux
-
-   <img width="1265" height="539" alt="Screenshot (416)" src="https://github.com/user-attachments/assets/e1e40d43-4a58-4e4a-9b8b-8b522ae3ce5f" />
-
-
-3. update server dan install prasyarat software barman
-
-   <img width="1248" height="442" alt="Screenshot (417)" src="https://github.com/user-attachments/assets/51710966-d88d-4b34-80bd-76f14686bd1b" />
-   - berfungsi menambahkan repositori untuk barman
+2. membuat file archive WAL direktori di penyimpanan data postgresql
+   
+   <img width="1217" height="568" alt="Screenshot (426)" src="https://github.com/user-attachments/assets/080274de-88d9-40aa-9a2d-d9760679c31b" />
 
 
-4. menambahkan kunci autentifikasi postgresql dan mendaftarkannya ke repositori postgresql
+4. konfigurasi database server postgresql sebagai target barman
+   - sudo vim /etc/postgresql/16/main/postgresql.conf
+     listen_adress = *
+     wal_level = replica
+     archive_mode = on
+     archive_command = ‘test ! -f /var/lib/postgresql/16/main/wal_archive/%f && cp %p                                   var/lib/postgresql/16/main/wal_archive/%f’
+     max_wal_senders=10
+     wal_keep_size=1024
+
+
+5. membuat user barman dan konfigurasi postgresql autentifikasi
+
+   
+
+
+6. menambahkan kunci autentifikasi postgresql dan mendaftarkannya ke repositori postgresql
 
    <img width="1679" height="463" alt="Screenshot (421)" src="https://github.com/user-attachments/assets/3b920671-b9a3-4bf2-93dd-9e113e25f888" />
    - bertujuan untuk mendaftarkan software resmi ke dalam os linux
 
 
-5. update server dan install barman
+7. update server dan install barman
 
    <img width="978" height="100" alt="Screenshot (422)" src="https://github.com/user-attachments/assets/3943e251-ce4c-47f7-8b09-4ca828bce5b6" />
 
 
-6. membuat kunci keamanan untuk menggunakan barman terhubung ke database server tanpa akses password
+8. membuat kunci keamanan untuk menggunakan barman terhubung ke database server tanpa akses password
    - membuat backup tanpa perlu input password
    - lebih aman dari membuat password biasa
    - mempermudah koneksi dengan database server
@@ -50,7 +59,7 @@ hal yang dipersiapkan melakukan backup dan restore menggunakan barman:
      <img width="1238" height="550" alt="Screenshot (423)" src="https://github.com/user-attachments/assets/6ce62374-045c-4d3b-b737-a590d5635e8d" />
 
 
-7. 
+9. 
 
    
 
