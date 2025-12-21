@@ -4,7 +4,7 @@ kelebihan pgbackrest sebagai tool physical backup open source:
 - support full, incremental, dan differential backups
 - sangat cepat untuk backup database produksi dengan memori besar dan memastikan backup yang konsisten
 - parallel backup dan restore
-- kemudahan untuk point in time recovery(pitr)
+- archive wal file berkelanjutan, cocok untuk disaster recovery RPO mendekati zero data loss
 - support retention policy, untuk automasi hapus backup usang
 - support compression dan encrypted file backup
 - support remote backup dan restore melalui ssh
