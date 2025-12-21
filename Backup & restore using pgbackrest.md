@@ -75,7 +75,7 @@ kelebihan pgbackrest sebagai tool physical backup open source:
      - target timer : "2025-12-21 02:24:00"
 
 
-10. restore file backup menggunakan waktu waktu terakhir saat backup sebelum kehilangan data
+10. restore backup file data menggunakan waktu terakhir saat backup sebelum kehilangan data
 
     <img width="1687" height="369" alt="Screenshot (443)" src="https://github.com/user-attachments/assets/f234e483-a558-407f-89e3-b0a6f8b291da" />
     - type : untuk menentukan variable target point in time recovery
