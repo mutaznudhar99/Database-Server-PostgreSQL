@@ -1,4 +1,4 @@
-pada sesi kali ini, saya akan melakukan query optimzer untuk mengetahui performa query database server sebelum membuat index dan sesudah membuat index untuk menentukan performa database server yang optimal. kemudian dilanjutkan dengan maintenance database server setelah melakukan operasi DML seperti insert ke dalam database, untuk mengoptimalkan performa dan update data statistik
+pada sesi kali ini, saya akan melakukan query optimzer untuk mengetahui performa query database server sebelum membuat index dan sesudah membuat index untuk menentukan perencanaan query database server yang optimal. kemudian dilanjutkan dengan maintenance database server setelah melakukan operasi DML pada database, untuk mengoptimalkan performa dan memperbarui data statistik database.
 
 
 
@@ -29,8 +29,11 @@ pada sesi kali ini, saya akan melakukan query optimzer untuk mengetahui performa
    - execution time 2.463 > 0.433 : penurunan waktu query yang signifikan menandakan performa query setelah index lebih optimal.
 
 
-6. maintenance database **Analyze nametable** setelah melakukan operasi besar seperti insert untuk memperbarui statistik data internal database
+6. maintenance database **Vacuum analyze nametable** setelah melakukan operasi besar seperti DML untuk memperbarui statistik data internal database
    agar query optimizer mendapatkan data yang akurat.
+
+
+7. maintenance lanjutan **reindex index concurrently nameindex** apabila fragmentasi index melebihi 30% setelah melakukan operasi besar seperti DML untuk mengembalikan performa index.
 
 
    
