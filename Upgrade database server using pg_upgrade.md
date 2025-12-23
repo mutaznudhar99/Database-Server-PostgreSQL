@@ -1,5 +1,15 @@
 pada sesi kali ini, saya akan melakukan upgrade database server dari versi 16 ke versi 17 menggunakan pg_upgrade utility di server yang sama.
-database server akan mengalami downtime selama beberapa menit.
+
+kelebihan pg_upgrade sebagai utility upgrade database server versi mayor:
+- migrasi metadata pada database server
+- memindahkan data fisik database server
+- memindahkan system katalog
+- memindahkan file binary database server
+- cepat untuk database dengan memori besar
+
+kekurangan pg_upgrade sebagai utility upgrade database server:
+- downtime selama beberapa menit
+- tidak menyalin konfigurasi database server seperi postgresql.conf dan lainnya
 
 
 
@@ -42,7 +52,7 @@ database server akan mengalami downtime selama beberapa menit.
    <img width="907" height="474" alt="Screenshot (474)" src="https://github.com/user-attachments/assets/4d219731-5074-4d24-ad34-e56a91e85de9" />
    - main : file data database server
    - bin : binary database server
-   - postgresql.conf : konfigurasi parameter database server
+   - postgresql.conf : lokasi konfigurasi postgresql apabila terpisah dengan data fisik
 
 
 9. setelah file kedua versi compatible, eksekusi pg_upgared menggunakan link, supaya lebih cepat.
