@@ -43,7 +43,7 @@ kekurangan pg_upgrade sebagai utility upgrade database server:
 
 7. cek database di postgresql versi 17, memastikan tidak ada database lain selain database bawaan
 
-   <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e3a9fa7b-c26b-4150-ad09-fe983abf272a" />
+   <img width="1262" height="289" alt="Screenshot (472)" src="https://github.com/user-attachments/assets/c59e7876-defb-4fcf-a780-3c29db6ce52e" />
 
 
 8. stop kedua system postgresql kemudian melakukan kecocokan file binary, data, dan konfigurasi database server sebelum eksekusi upgrade
