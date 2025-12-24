@@ -77,7 +77,8 @@ kekurangan pg_upgrade sebagai utility upgrade database server:
 
 
 13. hapus paket instalasi dan membersihkan folder postgresql versi 16
-    - sudo apt purge postgresql-16
+    - sudo apt auto-remove postgresql-16
+    - sudo apt purge poestgresql-16
 
 
 14. cek status cluster database, memastikan cluster database versi 16 sudah terhapus
