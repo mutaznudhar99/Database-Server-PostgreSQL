@@ -33,7 +33,8 @@ pada sesi kali ini, saya akan melakukan query optimzer untuk mengetahui performa
    agar query optimizer mendapatkan data yang akurat.
 
 
-7. maintenance lanjutan **reindex index concurrently nameindex** apabila fragmentasi index melebihi 30% setelah melakukan operasi besar seperti DML untuk mengembalikan performa index.
+7. maintenance lanjutan **reindex index concurrently nameindex** tanpa mengunci dari operasi tulis.
+   - dilakukan apabila fragmentasi index melebihi 30% setelah melakukan operasi besar seperti DML untuk mengembalikan performa index.
 
 
    
