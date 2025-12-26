@@ -4,6 +4,7 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 - akses role ke dalam object baru secara otomatis
 - membuat user dengan hak akses role operasional
 - mempertimbangkan membuat schema selain public
+- install pgaudit untuk monitoring tindakan yang dilakukan user pada database server
 
 
 1. membuat user sebagai bahan testing untuk login ke dalam database server dengan hak akses public
@@ -66,6 +67,46 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 10. cek grant atau akses yang diberikan kepada role operasional
 
     <img width="1031" height="683" alt="Screenshot (414)" src="https://github.com/user-attachments/assets/1e41ba07-9ae5-40d3-8820-098f46d82174" />
+
+
+11. selanjutnya, mengaktifkan pg_audit untuk mencatat setiap user yang login dan mengakses data pada database dan disimpan di dalam file logging.
+    - install postgresql-versi-pgaudit
+
+      <img width="1357" height="677" alt="Screenshot (504)" src="https://github.com/user-attachments/assets/0d3a8cb5-00f6-4e09-8f67-e8565b2393be" />
+
+
+12. konfigurasi postgresql.conf dengan menambahkan parameter pgaudit
+
+    <img width="1137" height="201" alt="Screenshot (518)" src="https://github.com/user-attachments/assets/7c99da5c-e6a7-459e-9dc5-a34bcb14f52f" />
+    - all : mencatat semua tindakan yang dilakukan oleh user pada database server, proses audit paling berat(tidak rekomen)
+    - log_line_prefix : mencatat dari mana asal user
+
+
+13. membuat extension pgaudit pada database untuk mengaktifkan fitur audit
+
+    <img width="564" height="230" alt="Screenshot (511)" src="https://github.com/user-attachments/assets/5547cd2e-f24f-4a76-bdc8-9b600b5a7dd2" />
+
+
+14. konfigurasi pg_hba.conf untuk menerima akses ke database dari server luar
+
+    <img width="1166" height="276" alt="Screenshot (514)" src="https://github.com/user-attachments/assets/7236d5b9-315f-4f2d-98f0-1193d12b4b82" />
+   - trust : memberikan kepercayaan penuh pada user di luar server tanpa verifikasi apapun. dilakukan untuk testing akses database.
+
+
+15. install postgresql-client-versi di server berbeda kemudian login ke dalam database server dan membuat database beserta table untuk bahan audit
+    - sudo apt-get install postgresql-client-versi
+
+      <img width="1229" height="414" alt="Screenshot (515)" src="https://github.com/user-attachments/assets/262b6114-bfcf-4d7c-8100-b4f28a73728f" />
+
+
+16. login ke dalam database server dan melakukan read data pada server primary
+
+    <img width="748" height="245" alt="Screenshot (516)" src="https://github.com/user-attachments/assets/ab4b54a0-e7de-441d-836c-c5df82f197f8" />
+
+
+17. cek log file audit di server primary
+
+    <img width="1694" height="322" alt="Screenshot (517)" src="https://github.com/user-attachments/assets/1d9f1553-fb97-4d96-8bd9-bd50cd16d65a" />
 
 
    
