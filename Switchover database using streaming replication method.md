@@ -1,4 +1,4 @@
-Sesi ini akan mendemonstrasikan prosedur Switchover pada arsitektur Streaming Replication (Physical Replication). Tujuannya adalah melakukan transisi peran antara server Primary dan Standby secara terencana guna keperluan pemeliharaan server tanpa kehilangan data (zero data loss). Proses ini melibatkan sinkronisasi terakhir (checkpoint), penghentian layanan Primary secara bersih, dan mempromosikan Standby menjadi Primary baru. Skalabilitas baca akan dicapai dengan mengarahkan trafik read-only ke node yang sedang berperan sebagai Standby.
+pada sesi kali ini, saya akan melakukan switchover database pada arsitektur Streaming Replication (Physical Replication). Tujuannya adalah melakukan transisi peran antara server Primary dan Standby secara terencana guna keperluan pemeliharaan server tanpa kehilangan data (zero data loss). Proses ini melibatkan sinkronisasi terakhir (checkpoint), penghentian layanan Primary secara bersih, dan mempromosikan Standby menjadi Primary baru. Skalabilitas baca akan dicapai dengan mengarahkan trafik read-only ke node yang sedang berperan sebagai Standby.
 
 
 hal yang dipersipkan:
