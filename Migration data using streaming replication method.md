@@ -1,5 +1,4 @@
-pada sesi kali ini, saya akan melakukan migrasi data dari server primary ke server standby menggunakan metode streaming replikasi (replikasi fisik)
-untuk kebutuhan migrasi data near zero downtime. hal ini bisa dilakukan untuk maintenance server primary dan melakukan skalabilatas baca secara manual.
+pada sesi kali ini, saya akan melakukan migrasi data dari server primary ke server standby menggunakan metode streaming replikasi (replikasi fisik) untuk menduplikasi seluruh isi server database dengan optimasi near zero downtime. hal ini bisa dilakukan untuk maintenance server primary dan melakukan skalabilatas baca secara manual.
 
 
 hal yang dipersipkan:
