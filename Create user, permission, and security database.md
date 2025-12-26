@@ -82,7 +82,7 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
     - log_line_prefix : mencatat dari mana asal user
 
 
-13. membuat extension pgaudit pada database untuk mengaktifkan fitur audit
+13. membuat extension pgaudit pada database yang dituju untuk mengaktifkan fitur audit
 
     <img width="564" height="230" alt="Screenshot (511)" src="https://github.com/user-attachments/assets/5547cd2e-f24f-4a76-bdc8-9b600b5a7dd2" />
 
