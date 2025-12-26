@@ -1,4 +1,4 @@
-pada sesi kali ini, saya akan melakukan query optimzer untuk mengetahui performa query database server sebelum membuat index dan sesudah membuat index untuk menentukan perencanaan query database server yang optimal. kemudian dilanjutkan dengan maintenance database server setelah melakukan operasi DML pada database, untuk mengoptimalkan performa dan memperbarui data statistik database.
+pada sesi kali ini, saya akan melakukan query optimasi untuk mengetahui performa query database server sebelum membuat index dan sesudah membuat index untuk menentukan perencanaan query database server yang optimal. kemudian dilanjutkan dengan maintenance database server setelah melakukan operasi DML pada database, untuk mengoptimalkan performa dan memperbarui data statistik database.
 
 
 
