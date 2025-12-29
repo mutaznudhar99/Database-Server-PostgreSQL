@@ -5,78 +5,108 @@ skema secara otomatis, migrasi data secara real-time, serta penyesuaian tipe dat
 hal yang perlu dipersiapkan:
 1. 1 server mysql versi 8.0
 2. 1 server postgresql versi 16.11
-3. tool pgloader, 
-4. memastikan kedua database server menggunakan encoding utf-8 untuk menghindari corrupt character
+3. tool pgloader
 
 
 
 
 
-1. install mysql dan postgresql database di masing-masing server
+1. install database mysql server di server mysql
 
-   <img width="683" height="64" alt="Screenshot (543)" src="https://github.com/user-attachments/assets/d5175b99-a4ad-4836-beea-5ec6482ba500" />
-   <img width="744" height="79" alt="Screenshot (544)" src="https://github.com/user-attachments/assets/ae769416-17a2-435a-9b8b-47a05b4fde37" />
+   <img width="1146" height="383" alt="Screenshot (571)" src="https://github.com/user-attachments/assets/8291eb43-9ab2-4dd1-bed5-957a90410ca3" />
 
 
-2. konfigurasi bind_address mysqld.cnf mysql sebagai listening parameter untuk menerima koneksi dari server luar
+2. konfigurasi mysqld.cnf. mengkoneksikan server postgresql dengan server mysql
+   - sudo vim /etc/mysql/mysql.conf.d/mysqld.cnf
+
+     <img width="1011" height="170" alt="Screenshot (565)" src="https://github.com/user-attachments/assets/239711d2-5536-4c71-9399-e74e70668681" />
+     - * : menerima koneksi dari server luar
+
+
+3. membuat user sebagai monitor migrasi data
+
+   <img width="934" height="451" alt="Screenshot (587)" src="https://github.com/user-attachments/assets/d0ae8df2-ab94-4f1e-98e5-f141fde1afe9" />
+
+
+4. cek character set mysql server. memastikan charset compatable dengan postgresql server.
+
+   <img width="711" height="462" alt="Screenshot (569)" src="https://github.com/user-attachments/assets/b7795496-9db6-4545-8ea6-d4a1fcc430b1" />
+   - utf8mb4 : charset modern dari mysql. menunjang type data seperti emoji dan sebagainya.
+
+
+5. membuat database dan table dengan variasi type data modern sebagai testing migrasi data.
+
+   <img width="1349" height="856" alt="Screenshot (567)" src="https://github.com/user-attachments/assets/dc7dc96d-c1ab-4334-9bb7-337b3da37c79" />
+
+
+6. input data ke dalam table sebagai sample data 
+
+   <img width="1687" height="506" alt="Screenshot (568)" src="https://github.com/user-attachments/assets/b44a8efe-b1d2-4ca8-a29b-f3a5c2683561" />
+
+
+7. install database postgresql di server berbeda
+
+   <img width="977" height="254" alt="Screenshot (570)" src="https://github.com/user-attachments/assets/029f3055-bddc-4799-ac99-6e3bb04c5353" />
+
+
+8. install pgloader versi terbaru dari github
+   - menghindari ketidakcocokan charset mysql dengan postgresql
+   - menerima type data modern dari mysql
+
+     <img width="676" height="90" alt="Screenshot (581)" src="https://github.com/user-attachments/assets/81a0ac9f-81c9-4700-bf7c-9ce5510f20c4" />
+
+
+9. mmebuat user di postgresql untuk menerima data dari mysql
+
+   <img width="826" height="155" alt="Screenshot (572)" src="https://github.com/user-attachments/assets/e65da59d-40b6-4976-a94d-29887fd406d3" />
+
+
+10. cek status charset postgresql server
+    - memastikan charset kompatibel dengan mysql
+
+      <img width="583" height="314" alt="Screenshot (580)" src="https://github.com/user-attachments/assets/07151654-95ea-4c1f-be7a-29c980da491f" />
+      - utf8 : charset default postgresql yang setara dengan charset mysql utf8mb4
+
+
+11. membuat database sebagai lokasi penyimpanan data dari mysql
+
+    <img width="1338" height="401" alt="Screenshot (573)" src="https://github.com/user-attachments/assets/452fd9ae-fca7-40ce-88b9-4e705bd79001" />
+
+
+12. eksekusi migrasi data menggunakan tool pgloader di server postgresql
+
+    <img width="1643" height="585" alt="Screenshot (583)" src="https://github.com/user-attachments/assets/0835a2a9-c5bf-4334-a973-05160427e7c7" />
+
+
+13. verifikasi type data pada table di postgresql 
+
+    <img width="1098" height="551" alt="Screenshot (584)" src="https://github.com/user-attachments/assets/2db6f991-0425-4c2e-878e-4ad2d2d143a7" />
+    - type data mengalami perubahan karena pgloader menyesuaikan type data berdasarkan dengan arsitektur postgresql
+
+
+15. verifikasi sample data
+
+    <img width="1698" height="239" alt="Screenshot (585)" src="https://github.com/user-attachments/assets/16f65f10-a9fd-4333-9815-bc669afdce80" />
+
+
+
+## secara teknis, migrasi data memungkinkan dilakukan. butuh ketelitian lebih tinggi untuk database level produksi.
+
+
+
+    
+
+
+
+
+     
 
    
 
 
-2. membuat user di mysql server menggunakan ip server postgresql sebagai monitor migrasi data
-
-   <img width="1029" height="348" alt="Screenshot (545)" src="https://github.com/user-attachments/assets/ff1a8b72-c9e2-48c6-8f8a-b35db3cf987a" />
-
-
-3. membuat sample data di database mysql sebagai bahan demonstrasi migrasi data
-
-   <img width="897" height="715" alt="Screenshot (546)" src="https://github.com/user-attachments/assets/45140513-0db4-492a-bc13-b207f958ca7b" />
-
-
-4. cek encoding database mysql, memastikan menggunakan character utf8mb4
-
-   <img width="703" height="294" alt="Screenshot (551)" src="https://github.com/user-attachments/assets/98bda6fd-8747-4645-a6f9-70f2076b3101" />
-
-
-
-5. install tool pgloader di server database postgresql
-
-   <img width="791" height="94" alt="Screenshot (547)" src="https://github.com/user-attachments/assets/43419ee7-a6cf-4f58-b183-6e44a3cdfbb7" />
-
-
-6. membuat user postgres dengan password untuk menerima data dari server database mysql
-
-   <img width="867" height="210" alt="Screenshot (548)" src="https://github.com/user-attachments/assets/0f2abcbf-9972-49f7-a902-54e4d6b8fc1e" />
-
-
-7. membuat database di server postgresql untuk menerima data dari server mysql
-
-   <img width="1343" height="491" alt="Screenshot (550)" src="https://github.com/user-attachments/assets/a7653367-414f-4b43-82d6-25c7a29660dd" />
-
-
-8. cek encoding database postgresql, memastikan menggunakan character yang sama dengan database mysql
-
-   <img width="589" height="235" alt="Screenshot (552)" src="https://github.com/user-attachments/assets/0a5941a9-90be-44c6-bdcb-18811c7fa8fb" />
-   - utf8mb4 > utf8 : character set database yang sama menghindari kegagalan saat migrasi data terutama untuk type data yang berbeda antara platform mysql dan postgresql
-
-
-9. proses migrasi data menggunakan pgloader di server postgresql
-
    
-   
-
-
-
-
-
 
 
    
 
-   
 
-   
-
-
-
-   
