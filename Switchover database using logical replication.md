@@ -1,1 +1,0 @@
-pada sesi kali ini, saya akan melakukan switchover database menggunakan arsitektur logical replication. logical replication ini akan memindahkan table, views, index dari source server mrnuju server replica
