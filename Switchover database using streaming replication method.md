@@ -119,6 +119,10 @@ hal yang dipersipkan:
 
 
 
+##Secara teknis, prosedur switchover database menggunakan metode Streaming Replication telah berhasil divalidasi pada lingkungan testing. Namun, untuk implementasi di level produksi, diperlukan standarisasi prosedur operasional (SOP) yang lebih ketat guna meminimalisir risiko operasional dan memastikan ketersediaan layanan (High Availability)
+
+
+
 
 
 
