@@ -1,14 +1,10 @@
 pada sesi kali ini, saya akan mendemonstrasikan proses Migrasi Data Heterogen (lintas platform) dari MySQL ke PostgreSQL menggunakan tool pgloader. Fokus utama dari demonstrasi ini adalah melakukan transformasi 
 skema secara otomatis, migrasi data secara real-time, serta penyesuaian tipe data (type casting) dari dialek MySQL ke standar PostgreSQL untuk menjaga integritas data selama proses transisi.
 
-
 hal yang perlu dipersiapkan:
-1. 1 server mysql versi 8.0
-2. 1 server postgresql versi 16.11
-3. tool pgloader
-
-
-
+- 1 server mysql versi 8.0
+- 1 server postgresql versi 16.11
+- tool pgloader
 
 
 1. install database mysql server di server mysql
