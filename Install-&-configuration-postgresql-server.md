@@ -3,7 +3,7 @@ pada tahap awal, instalasi dan konfigurasi database server postgreSQL sangat pen
 
 
 1. import repository signing key dari laman/website postgresql linux download, bertujuan untuk:
-   - memverifikasi, bahwa saat instalasi postgresql di os linux, file instlasi murni dari postgresql. menghindari peretasan system.
+   - memverifikasi package instalasi postgresql di os linux murni dari enterprisedb. menghindari peretasan system.
 
    <img width="1575" height="304" alt="Screenshot (380)" src="https://github.com/user-attachments/assets/753c57b4-40b6-497c-9292-f19d8fc43a41" />
 
