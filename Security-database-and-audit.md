@@ -107,6 +107,9 @@ pada sesi kali ini, saya akan membuat role, permission, user, dan security datab
 17. cek log file audit di server primary
 
     <img width="1694" height="322" alt="Screenshot (517)" src="https://github.com/user-attachments/assets/1d9f1553-fb97-4d96-8bd9-bd50cd16d65a" />
+    - postgres@aaa dari 192.168.1.12 : melakukan create table
+    - postgres@aaa dari 192.168.1.12 : melakukan insert table
+    - postgres@aaa dari 192.168.1.12 : melakukan reading table
 
 
    
