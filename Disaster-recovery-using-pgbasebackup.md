@@ -1,4 +1,4 @@
-pada sesi ini, saya akan melakukan metode backup dan point in time recovery + wal files menggunakan pgbackrest untuk menentukan RPO seminimal mungkin.
+pada sesi ini, saya akan melakukan metode backup dan point in time recovery (PITR) + wal files menggunakan pgbasebackup untuk menentukan RPO seminimal mungkin.
 
 apabila metode backup & restore pitr hanya akan mengembalikan data terakhir saat backup, restore pitr + wal files akan mengembalikan data ke titik waktu tertentu sebelum database kehilangan data.
 
