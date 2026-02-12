@@ -1,11 +1,11 @@
-pada sesi kali ini, saya akan membuat role, permission, user, dan security database pada level keamanan yang bisa diterapkan di level enterprise, diantaranya:
-- menutup akses database secara public 
-- membuat role operasional 
-- akses role ke dalam object baru secara otomatis
-- membuat user dengan hak akses role operasional
-- mempertimbangkan membuat schema selain public
-- install pgaudit untuk monitoring tindakan yang dilakukan user pada database server
+Pada sesi ini, saya akan mengimplementasi database security pada PostgreSQL. Fokus utama meliputi password otentifikasi (Hardening), manajemen peran (Role-based Access Control), penggunaan skema kustom isolasi data, dan mengaktifkan modul audit menggunakan pgAudit utility sebagai monitor setiap aktivitas users secara real-time
 
+Strategi security yang diterapkan:
+- Zero trust access control : Menutup akses publik default. Mencegah login tanpa izin eksplisit
+- Least privilige principal : Membatasi hak akses role hanya pada objek yang diperlukan
+- Automated permission      : Set default privileges, tabel baru secara otomatis mewarisi izin keamanan
+- Advanced monitoring       : Integrasi pgAudit untuk merekam trail logs aktivitas DML/DDL dari users
+ 
 
 1. membuat user sebagai bahan testing untuk login ke dalam database server dengan hak akses public
    
