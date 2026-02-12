@@ -6,10 +6,10 @@ kelebihan pg_repack:
 - Performance Boost: Meningkatkan efisiensi I/O dan membangun ulang indeks secara optimal
 
 
-kekurangan pg_repack
-- beban resources tinggi CPU dan I/O
-- dilakukan pada table yang memiliki primary key atau unique key not null
-- mengkonsumsi banyak ruang disk. membutuhkan setidaknya 2x lipat disk dari ukuran table
+kekurangan pg_repack:
+- Konsumsi resource yang tinggi (CPU & I/O): menghindari melakukan maintenance saat trafik tinggi
+- Persyaratan skema (primary/unique key)
+- Lonjakan WAL (Write-Ahead Logging): aktivitas ini menghasilkan log transaksi (WAL) dalam jumlah besar. Berpotensi mempercepat full direktori pg_wal atau memperlambat proses replikasi
 
 
 
