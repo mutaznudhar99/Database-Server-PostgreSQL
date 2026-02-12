@@ -1,5 +1,4 @@
-Pada sesi kali ini, saya akan melakukan pemeliharaan (maintenance) database menggunakan pg_repack dan ANALYZE. Tujuannya adalah untuk mereorganisasi ukuran fisik tabel yang mengalami pembengkakan (bloat) 
-serta memperbarui statistik tabel agar query planner dapat bekerja secara akurat, sehingga performa database tetap optimal.
+Pada sesi kali ini, saya akan melakukan maintenance database menggunakan tools pg_repack dan perintah ANALYZE. Bertujuan reorganisasi struktural fisik tabel yang mengalami pembengkakan (bloat) serta meng-update statistik tabel. Memastikan query planner bekerja secara akurat agar performa I/O database tetap optimal tanpa mengganggu ketersediaan layanan (zero downtime)
 
 kelebihan pg_repack:
 - online processing (tanpa lock table dan zero downtime)
