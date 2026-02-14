@@ -1,5 +1,4 @@
-pada tahap awal, instalasi dan konfigurasi database server postgreSQL sangat penting untuk menentukan level database server. pada sesi ini saya akan instalasi postgreSQL versi yang tersedia di os linux ubuntu dan mengkonfigurasinya untuk kebutuhan database server level non-produksi/testing.
-
+Pada sesi ini, saya akan melakukan instalasi PostgreSQL versi terbaru pada OS Ubuntu dan mengkonfigurasinya secara spesifik untuk kebutuhan environment non-produksi/testing
 
 
 1. import repository signing key dari laman/website postgresql linux download, bertujuan untuk:
