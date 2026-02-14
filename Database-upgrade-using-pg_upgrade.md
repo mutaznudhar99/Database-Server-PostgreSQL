@@ -68,7 +68,7 @@ kekurangan pg_upgrade:
       <img width="892" height="161" alt="Screenshot (479)" src="https://github.com/user-attachments/assets/579e706d-e94a-40b8-8ac7-23c270d4fb5c" />
 
 
-12. Verifikasi akhir melalui pg_lsclusters. Memastikan server hanya menjalankan cluster versi 17 dan data tetap utuh pasca-proses upgrade
+12. Verifikasi akhir melalui pg_lsclusters. Memastikan server hanya menjalankan cluster versi 17 dan database tetap utuh pasca-proses upgrade
 
     <img width="1370" height="372" alt="Screenshot (482)" src="https://github.com/user-attachments/assets/dd833be7-9429-4d8e-a617-f5e715e8a0d5" />
 
